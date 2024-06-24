@@ -1,0 +1,11 @@
+h1 {
+    margin-bottom: 0;
+}
+
+.meal-tile-buttons-wrapper {
+    display: flex;
+    justify-content: space-between;
+    .button-margin {
+        margin-right: 40px;
+    }
+}

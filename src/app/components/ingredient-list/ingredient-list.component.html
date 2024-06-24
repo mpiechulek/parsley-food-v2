@@ -1,0 +1,20 @@
+<div>
+  <h3>Meal ingredient list:</h3>
+  <ul>
+    <li *ngFor="let ing of ingredients; trackBy: identify">
+      <div class="ingredient-list-item">
+        <p class="ingredient-name">{{ ing.name }}</p>
+        <input
+          class="ingeredint-input input-margin"
+          type="text"
+          [value]="ing.quantity"
+        />
+        <span class="input-margin">[g]</span>
+        <button class="delete-button" (click)="onOpenDialog()">
+            Delete
+          <mat-icon fontIcon="delete_forever"></mat-icon>
+        </button>
+      </div>
+    </li>
+  </ul>
+</div>

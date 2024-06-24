@@ -1,0 +1,30 @@
+<form [formGroup]="myControl" class="form-style" (ngSubmit)="onSubmitSearch()">
+  <mat-form-field style="width: 100% !important">
+    <mat-label>Search food</mat-label>
+    <input
+      type="text"
+      placeholder="Pick one"
+      aria-label="Food"
+      matInput
+      formControlName="inputValue"
+      [matAutocomplete]="auto"
+    />
+    <!-- TODO how to save the id of the picked food not the name -->
+    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+      <mat-option
+        *ngFor="let food of filteredOptions | async"
+        [value]="food.name"
+      >
+        {{ food.name }}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+  <button
+    style="height: 56px; margin-left: 20px; width: 50px; width: 150px"
+    mat-button
+    type="submit"
+  >
+    Add
+  </button>
+</form>
+<p *ngIf="showError">Food is not on the list</p>

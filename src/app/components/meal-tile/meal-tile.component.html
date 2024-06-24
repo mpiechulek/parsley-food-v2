@@ -1,0 +1,29 @@
+<mat-expansion-panel (opened)="setStep(index)">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      <h1>{{ meal.name }}</h1>
+    </mat-panel-title>
+    <mat-panel-description>
+      {{ meal.date | date : "hh:mm" }}
+    </mat-panel-description>
+  </mat-expansion-panel-header>  
+  <ng-container >
+    <app-search-bar [foodList$]="foodsList$" (foodName)="addFoodToMeal($event)"/>
+  </ng-container>  
+  <app-ingredient-list [ingredients]="meal.ingredients"/>
+  <app-nutri-list [mealTotalNeutrinos]="meal.mealTotalNutrition" />
+  <div class="meal-tile-buttons-wrapper">
+    <button class="button-margin" mat-raised-button color="primary">
+        Save as recipe
+      </button>
+    <div>
+      <button class="button-margin" mat-raised-button color="primary">
+        Save
+      </button>
+      <button mat-raised-button color="warn" (click)="onOpenDialog()">
+        Delete
+      </button>
+    </div>
+  </div>
+</mat-expansion-panel>
+

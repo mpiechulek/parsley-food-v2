@@ -1,0 +1,78 @@
+<div class="board-main">
+  <div class="board-main__container">
+    <h1>Meal Board</h1>
+    <!--  -->
+    <div class="day-button-container">
+      <div class="day-button-container__find">
+        <mat-form-field>
+          <mat-label>Find date</mat-label>
+          <input matInput [matDatepicker]="picker" />
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle
+            matIconSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" class="button-margin">
+          Find
+        </button>
+        <button mat-raised-button color="accent">Clear</button>
+      </div>
+
+      <button mat-raised-button color="primary" (click)="onAddNewDay()">
+        Add day
+      </button>
+    </div>
+    <!-- meal day card -->
+    <ng-container *ngIf="mealDay">
+      <mat-card class="meal-margin-top">
+        <mat-card-content>
+          <div class="day-card-header">
+            <button
+              mat-raised-button
+              color="primary"
+              class="button-margin"
+              (click)="onAddNewMealToDay()"
+            >
+              Add meal
+            </button>
+            <h1>{{ mealDay.date | date }}</h1>
+          </div>
+        </mat-card-content>
+        <!-- Meals -->
+        <mat-card-content>
+          <mat-accordion style="height: 100%">
+            <div
+              class="meal-margin-top"
+              *ngFor="
+                let meal of mealDay.meals;
+                let i = index;
+                trackBy: identify
+              "
+            >
+              <app-meal-tile
+                [index]="i"
+                [meal]="meal"
+                (mealIngredient)="addIngredientToMeal($event)"
+              />
+            </div>
+          </mat-accordion>
+          <!-- Day nutrition's -->
+          <h2 class="total-nutri-header">Total day meals nutrition's</h2>
+
+          <mat-accordion>
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title> List of nations </mat-panel-title>
+              </mat-expansion-panel-header>
+              <app-nutri-list />
+            </mat-expansion-panel>
+          </mat-accordion>
+
+        </mat-card-content>
+      </mat-card>
+    </ng-container>
+  </div>
+</div>

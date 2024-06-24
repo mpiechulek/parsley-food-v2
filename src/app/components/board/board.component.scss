@@ -1,0 +1,58 @@
+.board-main {
+  width: 100%;
+  height: calc(100vh - 40px);
+  padding-top: 40px;
+
+  &__container {
+    width: 1000px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 40px;
+
+    h1 {
+      font-size: 40px;
+    }
+
+    .day-button-container {
+      display: flex;
+      justify-content: space-between;
+
+      &__find {
+        display: flex;
+      }
+
+      button {
+        height: 56px;
+        width: 100px;
+      }
+      .button-margin {
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+    }
+
+    .total-nutri-header {
+      padding-top: 20px;
+      border-top: 1px solid gray;
+      margin-top: 30px;
+    }
+
+    .meal-margin-top {
+      margin-top: 20px;
+    }
+  }
+}
+
+.day-card-header {
+  display: flex;
+  justify-content: flex-start;
+
+  h1 {
+    font-size: 36px;
+  }
+
+  .button-margin {
+    margin-right: 30px;
+  }
+}

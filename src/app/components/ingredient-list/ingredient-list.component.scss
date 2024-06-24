@@ -1,0 +1,31 @@
+.ingredient-list-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+
+  p {
+    margin: 0;
+  }
+
+  input {
+    width: 50px;
+  }
+
+  .input-margin {
+    margin-right: 12px;
+  }
+  .ingredient-name {
+    width: 100px;
+  }
+}
+
+.delete-button {
+  border: none;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:hover {
+    background-color: #dadada;
+  }
+}

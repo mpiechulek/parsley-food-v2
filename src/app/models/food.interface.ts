@@ -1,0 +1,37 @@
+export interface FoodInterface {
+    id: string;
+    name: string;
+    kcal: string;
+    watter: string;
+    proteinTotal: string;
+    proteinAnimal: string;
+    proteinPlant: string;
+    fat: string;
+    carbs: string;
+    cholesterol: string;
+    glycemicIndex: string;
+    saccharose: string;
+    lactose: string;
+    starch: string;
+    fiber: string;
+    sodium: string;
+    potassium: string;
+    calcium: string;
+    phosphorus: string;
+    magnesium: string;
+    iron: string;
+    zinc: string;
+    copper: string;
+    manganese: string;
+    retinol: string;
+    betaKaroten: string;
+    D: string;
+    E: string;
+    tiamineB1: string;
+    riboflavinB2: string;
+    niacinB3: string;
+    B6: string;
+    foliansB9: string;
+    B12: string;
+    C: string;
+}

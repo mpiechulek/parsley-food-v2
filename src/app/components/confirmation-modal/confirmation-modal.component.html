@@ -1,0 +1,15 @@
+<h1>Warning</h1>
+<p>Are you shure, you wan't to delete?</p>
+<div>
+  <button
+    class="button-margin button-margin "
+    mat-raised-button
+    color="primary"
+    (click)="dialogRef.close()"
+  >
+    OK
+  </button>
+  <button mat-raised-button color="warn" (click)="dialogRef.close()">
+    Cancel
+  </button>
+</div>

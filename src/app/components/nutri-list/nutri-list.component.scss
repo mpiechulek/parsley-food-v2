@@ -1,0 +1,28 @@
+.nutri-list-container {
+  display: flex;
+  ul {
+    width: 200px;
+
+    li {
+      margin-bottom: 5px;
+      &:hover {
+        background-color: #dadada;
+        cursor: pointer;
+      }
+    }
+
+    .nutri-list-item {
+      display: flex;
+      p {
+        margin: 0;
+      }
+    }
+  }
+  margin-bottom: 20px;
+  .text-1 {
+    width: 105px;
+  }
+  .text-2 {
+    width: 40px;
+  }
+}
